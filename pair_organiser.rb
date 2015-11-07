@@ -6,6 +6,7 @@ big_list = Array.new(20) { |i| "Name#{i}"}
 
 def valid_pairs? pair_arar, name_count
   h = {}
+  return false if pair_arar.length != name_count-1
   pair_arar.each do |ar1|
     return false if ar1.length != name_count/2
     ar1.each do |ar2|
@@ -28,7 +29,7 @@ p "Running pairer_big"
 start_time = Time.now
 big_pairs = pairer_big.run
 p "Execution time: #{Time.now-start_time}"
-p "*** Returned set is valid" if valid_pairs? big_pairs, big_list.length
+p  valid_pairs?(big_pairs, big_list.length) ? "*** Returned set is valid" : "!!! Returned set is INVALID"
 
 pairerjp = Pairerjp.new %w{Pablo Dan Andrew Tom Rob Jay Norm Yev}
 pp pairerjp.run
@@ -38,4 +39,4 @@ p "Running pairerjp_big"
 start_time = Time.now
 big_pairs_jp = pairerjp_big.run
 p "Execution time: #{Time.now-start_time}"
-p "*** Returned set is valid" if valid_pairs? big_pairs_jp, big_list.length
+p  valid_pairs?(big_pairs, big_list.length) ? "*** Returned set is valid" : "!!! Returned set is INVALID"
