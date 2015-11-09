@@ -2,18 +2,30 @@ require './lib/pairer'
 require './lib/pairerjp'
 require 'pp'
 
-big_list = Array.new(20) { |i| "Name#{i}"}
+big_list = Array.new(24) { |i| "Name#{i}"}
 
 def valid_pairs? pair_arar, name_count
   h = {}
-  return false if pair_arar.length != name_count-1
+  return "Invalid set, expected partition count: #{name_count-1}, provided: #{pair_arar.length}" if pair_arar.length != name_count-1
   pair_arar.each do |ar1|
-    return false if ar1.length != name_count/2
+    if ar1.length != name_count/2
+      pp "Invalid set, expected pair count: #{name_count/2}, provided: #{ar1.length}", ar1
+      return
+    end
     ar1.each do |ar2|
-      return false if ar2.length != 2
-      return false if ar2[0] == ar2[1]
+      if ar2.length != 2
+        pp "Invalid set, bad pair length: #{ar2.length}, pair: #{ar2}, partition: ", ar1 
+        return false 
+      end
+      if ar2[0] == ar2[1]
+        pp "Invalid set, pair members identicals: #{ar2.length}, pair: #{ar2}, partition: ", ar1 
+        return false 
+      end
       key = ar2.join
-      return false if h.has_key? key
+      if h.has_key? key
+        pp "Invalid set, duplicate pair: #{ar2.length}, pair: #{ar2}, partition: ", ar1 
+        return false 
+      end
       h[key] = true
     end
   end
