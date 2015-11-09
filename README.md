@@ -47,7 +47,7 @@ For each of the 7 pairs (or n-1 pairs) in row 0, find a pair in the next higher 
 
 Backtrackimg is needed because the pairs chosen in the first rows may preclude finding enough distincts pairs in the higher rows. Other pairs must then be chosen in the first rows.
 
-Found that for 26 names, the 23rd set of 13 pairs could not be completed after a lenghty 5000 seconds calculation. I assumes that the order of the pairs in the first row had to be changed. By searching in reverse order, from pair 0,25 down to pair 0,1, the search was successfully completed after 107 seconds!
+Found that for 26 names, the 23rd set of 13 pairs could not be completed after a lenghty 5000 seconds calculation. I assumed that the order of the pairs in the first row had to be changed. By searching in reverse order, from pair 0,25 down to pair 0,1, the search was successfully completed after 107 seconds!
 
 ### Computing once and storing
 One thing that can be done is to precompute the results. In the search, I used only the indexes of the names, that I mapped back to the names at the end. For instance, with 8 names I got:
