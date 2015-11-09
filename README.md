@@ -33,7 +33,7 @@ Some other related bits of code:
 
 In `lib/pairerjp.rb`, I coded a search using the following representation: let represent the possible pairs by their arra indexes in a 7 by 7 matrix in the case of a 8 names problem (or n-1 by n-1 for n names).
 
-R/C | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+R/C | 0 | 1 | 2 | 3 | 4 | 5 | 6 
 ---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 0 | 0,1 | 0,2 | 0,3 | 0,4 | 0,5 | 0,6 | 0,7
 1 | - | 1,2 | 1,3 | 1,4 | 1,5 | 1,6 | 1,7
