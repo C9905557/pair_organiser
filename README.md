@@ -1,5 +1,5 @@
 # Pair Organiser
-** See JPB comments in the next section.**
+**See JPB comments in the next section.**
 For finding all possible combinations of pairs amongst a group
 
 To use please edit the pair_organiser.rb file on the root (to include your set of individuals for pairing) and run like so:
